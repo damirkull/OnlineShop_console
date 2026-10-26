@@ -13,14 +13,19 @@ namespace OnlineShop
         public int Count { get {return items.Count();} }
 
         public void Add(Product product)
-            { items.Add(new CartItem(product)); }
+        { 
+            items.Add(new CartItem(product)); 
+        }
 
         public void Delete()
-            {  }
+        {  
+            
+        }
 
-        
         public CartItem[] getAll()
-            { return items.ToArray(); }
+        { 
+            return items.ToArray(); 
+        }
 
     }
 }

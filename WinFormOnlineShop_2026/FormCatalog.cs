@@ -5,6 +5,7 @@ namespace WinFormOnlineShop_2026
     public partial class FormCatalog : Form
     {
         Catalog catalog = new Catalog();
+
         public FormCatalog()
         {
             InitializeComponent();
