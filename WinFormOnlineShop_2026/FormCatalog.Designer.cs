@@ -36,6 +36,7 @@
             labelDescription = new Label();
             labelProductName = new Label();
             label2 = new Label();
+            buttonAdd = new Button();
             panelCatalog.SuspendLayout();
             panelProduct.SuspendLayout();
             SuspendLayout();
@@ -80,6 +81,7 @@
             // panelProduct
             // 
             panelProduct.BackColor = SystemColors.ControlLight;
+            panelProduct.Controls.Add(buttonAdd);
             panelProduct.Controls.Add(labelDescription);
             panelProduct.Controls.Add(labelProductName);
             panelProduct.Controls.Add(label2);
@@ -119,6 +121,18 @@
             label2.TabIndex = 1;
             label2.Text = "Карточка товара";
             // 
+            // buttonAdd
+            // 
+            buttonAdd.BackColor = SystemColors.ControlLightLight;
+            buttonAdd.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            buttonAdd.Location = new Point(153, 289);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(210, 63);
+            buttonAdd.TabIndex = 4;
+            buttonAdd.Text = "Добавить в корзину";
+            buttonAdd.UseVisualStyleBackColor = false;
+            buttonAdd.Click += buttonAdd_Click;
+            // 
             // FormCatalog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -146,5 +160,6 @@
         private Label labelProductName;
         private Label label2;
         private Label labelDescription;
+        private Button buttonAdd;
     }
 }
