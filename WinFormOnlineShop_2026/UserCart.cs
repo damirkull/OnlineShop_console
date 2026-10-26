@@ -21,10 +21,17 @@ namespace WinFormOnlineShop_2026
         public UserCart(Cart cart)
         {
             InitializeComponent();
+
+            decimal price = 0;
+
             foreach (CartItem cartItem in cart.getAll())
-            {
                 listBoxUserCart.Items.Add(cartItem.Product);
-            }
+
+            
+            foreach (CartItem cartItem in cart.getAll())
+                price += cartItem.Product.Price;
+
+            labelPrice.Text = $"Цена: {price.ToString()}";
         }
 
         private void buttonQuit_Click(object sender, EventArgs e)

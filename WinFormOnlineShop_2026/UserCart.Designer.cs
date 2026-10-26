@@ -30,6 +30,7 @@
         {
             listBoxUserCart = new ListBox();
             buttonQuit = new Button();
+            labelPrice = new Label();
             SuspendLayout();
             // 
             // listBoxUserCart
@@ -53,21 +54,34 @@
             buttonQuit.UseVisualStyleBackColor = true;
             buttonQuit.Click += buttonQuit_Click;
             // 
+            // labelPrice
+            // 
+            labelPrice.AutoSize = true;
+            labelPrice.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            labelPrice.Location = new Point(241, 424);
+            labelPrice.Name = "labelPrice";
+            labelPrice.Size = new Size(56, 21);
+            labelPrice.TabIndex = 2;
+            labelPrice.Text = "Цена: ";
+            // 
             // UserCart
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(407, 600);
+            Controls.Add(labelPrice);
             Controls.Add(buttonQuit);
             Controls.Add(listBoxUserCart);
             Name = "UserCart";
             Text = "UserCart";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private ListBox listBoxUserCart;
         private Button buttonQuit;
+        private Label labelPrice;
     }
 }
