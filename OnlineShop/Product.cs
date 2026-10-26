@@ -27,7 +27,7 @@ namespace OnlineShop
 
         public override string ToString()
         {
-            return $"{Id}:  {Name} ({Description} - {Price})";
+            return $"{Name} ({Description} - {Price})";
         }
     }
 }
