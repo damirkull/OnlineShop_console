@@ -5,7 +5,7 @@ namespace WinFormOnlineShop_2026
     public partial class FormCatalog : Form
     {
         Catalog catalog = new Catalog();
-        public Cart userCart = new Cart();
+        Cart userCart = new Cart();
         Product choosenProduct = null;
 
         public FormCatalog()
@@ -27,7 +27,7 @@ namespace WinFormOnlineShop_2026
 
         private void listBoxCatalog_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             if (listBoxCatalog.SelectedItem != choosenProduct)
             {
                 string text = listBoxCatalog.SelectedItem.ToString();
@@ -45,6 +45,12 @@ namespace WinFormOnlineShop_2026
             {
                 userCart.Add(choosenProduct);
             }
+        }
+
+        private void buttonCart_Click(object sender, EventArgs e)
+        {
+            UserCart cartForm = new UserCart(userCart);
+            cartForm.Show();
         }
     }
 }
