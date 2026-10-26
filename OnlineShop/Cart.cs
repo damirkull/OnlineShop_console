@@ -17,15 +17,14 @@ namespace OnlineShop
             items.Add(new CartItem(product)); 
         }
 
-        public void Delete()
+        public void Delete(int index)
         {  
-            
+            items.RemoveAt(index);
         }
 
         public CartItem[] getAll()
         { 
             return items.ToArray(); 
         }
-
     }
 }

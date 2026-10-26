@@ -8,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace WinFormOnlineShop_2026
 {
     public partial class UserCart : Form
     {
+        Cart newCart;
+
         public UserCart()
         {
             InitializeComponent();
@@ -21,16 +24,20 @@ namespace WinFormOnlineShop_2026
         public UserCart(Cart cart)
         {
             InitializeComponent();
+            newCart = cart;
+            ChangeCart();
+        }
+
+        void ChangeCart()
+        {
+            listBoxUserCart.Items.Clear();
 
             decimal price = 0;
-
-            foreach (CartItem cartItem in cart.getAll())
+            foreach (CartItem cartItem in newCart.getAll())
+            {
                 listBoxUserCart.Items.Add(cartItem.Product);
-
-            
-            foreach (CartItem cartItem in cart.getAll())
                 price += cartItem.Product.Price;
-
+            }
             labelPrice.Text = $"Цена: {price.ToString()}";
         }
 
@@ -38,10 +45,11 @@ namespace WinFormOnlineShop_2026
         {
             this.Close();
         }
-
-        private void listBoxUserCart_SelectedIndexChanged(object sender, EventArgs e)
+        private void buttonDelete_Click(object sender, EventArgs e)
         {
-
+            int index = listBoxUserCart.SelectedIndex;
+            newCart.Delete(index);
+            ChangeCart();
         }
     }
 }

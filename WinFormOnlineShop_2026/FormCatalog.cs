@@ -27,7 +27,6 @@ namespace WinFormOnlineShop_2026
 
         private void listBoxCatalog_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (listBoxCatalog.SelectedItem != choosenProduct)
             {
                 string text = listBoxCatalog.SelectedItem.ToString();
